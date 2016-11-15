@@ -22,13 +22,14 @@ class Solution(object):
         mid = n // 2
         if mid > 0 and nums[0] > nums[mid -1]:
             return self.findMin(nums[0: mid])
-        if mid < n and nums[mid] > nums[n - 1]:
+        elif mid < n and nums[mid] > nums[n - 1]:
             return self.findMin(nums[mid: n])
         else:
             return min(nums[0], nums[mid])
-        
+
+# testing
 def main():
-    inArray = [5, 2, 3, 4]
+    inArray = [5, 2, 2, 3, 5]
     expected = 2
     a = Solution()
     if a.findMin(inArray) == expected:
